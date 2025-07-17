@@ -23,5 +23,6 @@ class TakaheRouter:
 
     def allow_migrate(self, db, app_label, model_name=None, **hints):
         if app_label == "takahe" or db == "takahe":
-            return _is_testing and app_label == db
+            # return _is_testing and app_label == db
+            return app_label in ("takahe", "auth", "contenttypes", "sessions")
         return None

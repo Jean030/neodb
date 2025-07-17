@@ -381,6 +381,7 @@ SESSION_COOKIE_AGE = 90 * 24 * 60 * 60  # 90 days
 
 AUTHENTICATION_BACKENDS = [
     "mastodon.auth.OAuth2Backend",
+    "django.contrib.auth.backends.ModelBackend",
 ]
 
 LOG_LEVEL = env("NEODB_LOG_LEVEL", default="DEBUG" if DEBUG else "INFO")  # type:ignore
